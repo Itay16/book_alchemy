@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Bookstore</title>
+</head>
+<body>
+    <form action="/" method="GET">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search">
+        <input type="submit" value="Search">
+    </form>
+
+    <form action="/" method="GET">
+        <label for="sort">Sort by:</label>
+        <select id="sort" name="sort">
+            <option value="">None</option>
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+        </select>
+        <input type="submit" value="Sort">
+    </form>
+
+    <!-- Add button to add a new book -->
+    <form action="/add_book" method="GET">
+        <input type="submit" value="Add Book">
+    </form>
+
+    <!-- Add button to add a new author -->
+    <form action="/add_author" method="GET">
+        <input type="submit" value="Add Author">
+    </form>
+    
+{% if books %}
+        {% for book in books %}
+            <div class="book-item">
+                <h3>{{ book.title }}</h3>
+                <p>Author: {{ book.author }}</p>
+                {% if book.cover_image_url %}
+                    <img src="{{ book.cover_image_url }}" alt="{{ book.title }} Cover">
+                {% else %}
+                    <p>No cover image available.</p>
+                {% endif %}
+                <form method="post" action="{{ url_for('delete_book', book_id=book.id) }}">
+                    <input type="submit" value="Delete Book">
+                </form>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No books found.</p>
+    {% endif %}
+</body>
+</html>

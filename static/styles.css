@@ -1,0 +1,99 @@
+/* style.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+/* Home Page Styles */
+.book-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.book-item h3 {
+  color: #007bff;
+}
+
+.book-item p {
+  color: #555;
+}
+
+.book-item img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Add Book and Add Author Page Styles */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.form-container h2 {
+  color: #007bff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Flash Message Styles */
+.flash {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.flash.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.flash.error {
+  background-color: #dc3545;
+  color: #fff;
+}
